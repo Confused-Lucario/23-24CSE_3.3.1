@@ -22,24 +22,28 @@ def square_root(x):
     return math.sqrt(x)
 
 def sin(x):
-    return degrees.sin(x)
+    return math.sin(x * math.pi / 180)
+
 
 def cos(x):
-    return degrees.cos(x)
+    return math.cos(x * math.pi / 180)
+
 
 def tan(x):
-    return math.tan(x)
+    return math.tan(x * math.pi / 180)
+
 
 print("what would you like the calculator to do?" + "\n 1. add" + "\n 2. subtract" + "\n 3. multiply" "\n 4. divide" + "\n 5. power" + "\n 6. square root" + "\n 7. Sin" + "\n 8. cos" + "\n 9. tan")
 
 
-choice = int(input("Choose 1, 2, 3, 4, 5 ,6 ,7, 8, 9 \n"))
+choice = int(input("Choose 1, 2, 3, 4, 5, 6, 7, 8, 9, 0\n"))
 while type(choice) == int:
     if choice == 1:
         x = int(input("What are you adding to?"))
         y = int(input("How much are you adding?"))
         print(add(x, y))
-        choice = int(input("Choose 1, 2, 3, 4, 5 ,6 ,7, 8, 9 \n"))
+        prev_answers.append(str(x) + "+" + str(y) + "=" + str(add(x, y)))
+        choice = int(input("Choose 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 \n"))
     elif choice == 2:
         x = int(input("What are you subtracting from?"))
         y = int(input("How much are you subtracting by?"))
@@ -50,7 +54,8 @@ while type(choice) == int:
         x = int(input("What are you multiplying?"))
         y = int(input("how many times are you multiplying?"))
         print(multiply(x, y))
-        choice = int(input("Choose 1, 2, 3, 4, 5 ,6 ,7, 8, 9 \n"))
+        prev_answers.append(str(x) + "*" + str(y) + "=" + str(multiply(x, y)))
+        choice = int(input("Choose 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 \n"))
 
     elif choice == 4:
         x = int(input("What are you dividing?"))
