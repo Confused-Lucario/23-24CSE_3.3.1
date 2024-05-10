@@ -48,7 +48,7 @@ while True:
     try:
         choice = int(choice)
     except ValueError:
-        print("input needs to be a number not a letter\n")
+        print("invalid input\n")
     else:
         if choice == 1:
             x = int(input("What are you adding to?"))
@@ -103,3 +103,6 @@ while True:
 
         elif choice == 0:
             print(prev_answers)
+
+        elif choice > 9 or choice < 0:
+            print("Invalid input")
